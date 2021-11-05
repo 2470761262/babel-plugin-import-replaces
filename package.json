@@ -1,0 +1,14 @@
+{
+  "name": "babel-plugin-import-replaces",
+  "version": "1.0.4",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/2470761262/babel-plugin-import-replaces"
+  },
+  "scripts": {
+  },
+  "author": "zrrz",
+  "license": "ISC"
+}
