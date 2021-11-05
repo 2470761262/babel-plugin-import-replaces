@@ -1,8 +1,12 @@
 {
   "name": "babel-plugin-import-replaces",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
+  "keywords": [
+    "babel-plugin",
+    "antd"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/2470761262/babel-plugin-import-replaces"
