@@ -1,22 +1,49 @@
-module.exports = ({types}) => {
-    return {
-        visitor: {
-            ImportDeclaration(path, {opts,file}) {
-                const pathValue = path.node.source.value;
-                if (!file.opts.filename?.includes(opts.exclude) && opts.ignore.every(v => v != pathValue)) {
-                    for (const {key,value } of opts.importReplace) {
-                        if (pathValue.includes(key)) {
-                            path.replaceWith(
-                                types.ImportDeclaration(
-                                    path.node.specifiers,
-                                    types.stringLiteral(pathValue.replace(key, value))
-                                )
-                            );
-                            break;
-                        }
-                    }
-                }
+import { transformSync } from '@babel/core';
+// import generator from "@babel/generator";
+
+const genCode = () => {
+    return (t) => {
+        return {
+            visitor: {
+
+            }
+        };
+    };
+};
+
+
+const c = transformSync(
+    `
+   var z =  {
+        "val":1,
+        "left":{
+            "val":2,
+            "left":{
+                "val":3,
+                "left":null,
+                "right":null
+            },
+            "right":{
+                "val":3,
+                "left":null,
+                "right":null
             }
         },
-    }
-}
+        "right":{
+            "val":3,
+            "left":{
+                "val":4,
+                "left":null,
+                "right":null
+            },
+            "right":null
+            }
+        }
+    `
+    , {
+        plugins: [
+            genCode
+        ]
+    }).code
+
+console.log(c);
