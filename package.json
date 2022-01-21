@@ -11,8 +11,10 @@
     "type": "git",
     "url": "https://github.com/2470761262/babel-plugin-import-replaces"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "author": "zrrz",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.16.10"
+  }
 }
